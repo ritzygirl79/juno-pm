@@ -16,8 +16,8 @@ _____
 
 ## Debrief
 
-- **What worked:** _____
-- The top level dashboard summary of the issues identified and categorization by the risk. 
+- **What worked:** 
+  The top level dashboard summary of the issues identified and categorization by the risk. 
 - **What broke / felt like a toy:** _____
 - It wasn't clear what the information was used for and what was at stake for the High notes. 
 - **What I'd change next pass:** _____
