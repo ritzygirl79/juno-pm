@@ -18,7 +18,7 @@ _____
 
 - **What worked:** 
   The top level dashboard summary of the issues identified and categorization by the risk. 
-- **What broke / felt like a toy:** _____
-- It wasn't clear what the information was used for and what was at stake for the High notes. 
-- **What I'd change next pass:** _____
+- **What broke / felt like a toy:** 
+  It wasn't clear what the information was used for and what was at stake for the High notes. 
+- **What I'd change next pass:** 
 Recommended top risk levels having the use stories directly linked in it to review and expand on. 
