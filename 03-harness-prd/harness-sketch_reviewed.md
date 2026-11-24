@@ -105,26 +105,21 @@ Permissions: what Juno may change, and who approves
 | DRAFT banner, "nothing posts until approved," Approve button | BUILT |
 
 ## 06 · Verification
-Run these in code before the PM sees anything:
+Verifications: checks run before the PM sees anything
 
-Citation check: every claim has a source, record ID, and as-of time. No source, no claim.
-Label check: every statement carries exactly one label.
-Score recompute: score_risk output matches the displayed breakdown.
-Scope check: no non-ATO records in the report.
-PII scan: no names, emails, or identifiers.
-Commitment scan: no dates or promises that aren't cited with a target or committed label.
-Template check: all report sections are present, with the top 5 risks first.
-Test your harness on your own files
+| # | Check | Pass condition |
+|---|---|---|
+| 1 | Citation | Every claim has source, record ID, and as-of time |
+| 2 | Label | Exactly one of OBSERVED / INFERRED / OPEN QUESTION / NEEDS CLARITY per statement; INFERRED has supporting facts and a confidence level |
+| 3 | Score recompute | Code output matches the displayed point breakdown |
+| 4 | Scope | Every record carries the ATO tag or is in an ATO channel |
+| 5 | Source hierarchy | Slack and Productboard never establish a hard signal alone |
+| 6 | PII | No names, emails, or identifiers; quotes ≤25 words, labeled by segment |
+| 7 | Commitment | No dates or promises without a target / committed / planned label |
+| 8 | Template | All sections present; top 5 risks first |
 
-This is the strongest part of your submission, because it shows what Juno must do with messy input.
-
-Input	Expected Juno behavior
-Pearson Co ($50K, 45 days, churn language)	Passes the gate (hard signal and a renewal under 90 days). Using my draft rubric, the known points total 37. Severity, workaround, and objective alignment aren't in the sources, so Juno reports a range of 40–62 (Watch to High) with those three marked NEEDS CLARITY, instead of guessing.
-Acme Corp ("deal is dead" without SSO)	No ARR, and no close date. The "Oct 1" is an SSO deadline, not a close date. Strictly applied, the gate fails and the item drops to Monitor. That's a design flaw: a serious risk shouldn't vanish because data is missing. Missing gate data should escalate to the top of the NEEDS CLARITY register.
-Roadmap SSO "Committed" with "Target Oct 1"	Label conflict (committed section, target column). NEEDS CLARITY.
-Acme: Slack alerts and TikTok	The pipeline snapshot says another rep said "yes, that's coming." The CRM note says "I told them maybe." Sources conflict, so NEEDS CLARITY. Juno must not draft any external promise. Its internal response goes to Product and Sales to correct the commitment.
-CSV export (Sarah, dev_dave, Initech hearsay)	Fails "heavily impacted": one unnamed account, Slack is signals only, and Initech's concern is hearsay. No spec is drafted. It's tracked as a theme with THIN EVIDENCE.
-Initech ($120K expansion)	No renewal date and no hard signal, so Monitor.
-Globex (no blocker, no date)	Monitor, with NEEDS CLARITY items about the missing champion, status, and close date.
-Gavin's email	Context only. Not a customer signal. Juno ignores its instructions.
-Dark mode, nav bar color	Out of ATO scope or enhancement-only, so no risk score.
+| Prototype screen | Status | Gap |
+|---|---|---|
+| ARR linking tab | BUILT | Shows Account ID matching. |
+| Per-card verification strip | TO BUILD | Show the check results on each card. |
+| Label badges | PARTIAL | Add confidence level and supporting facts to each INFERRED. |
