@@ -8,14 +8,15 @@ RocketShip PMs need this handled: Juno is an Associate PM assistant for the Rock
 
 ## The harness
 
-| Surface | Specification |
-|---|---|
-| 01 Context | What Juno sees and how much it trusts it \| Tier \| Contents \| Treated as \| \|---\|---\|---\| \| Instructions \| Skill file, report… |
-| 02 Tools | What Juno can touch \| Tool \| Access \| Simulated by \| \|---\|---\|---\| \| `salesforce_read`, `databricks_query`, `jira_read`,… |
-| 03 Loop | **Outer loops:** the four triggers in the skill file. **Inner loop:** 1. Pull each source and stamp it with as-of time. 2. |
-| 04 Memory | Memory: what persists between runs \| Stored \| Purpose \| Simulated by \| \|---\|---\|---\| \| Prior-period mention counts \| Trend vs. |
-| 05 Permissions | read auto · draft auto · write confirm · send blocked |
-| 06 Verification | Verifications: checks run before the PM sees anything \| # \| Check \| Pass condition \| \|---\|---\|---\| \| 1 \| Citation \| Every claim… |
+
+| Surface | Specification | Controls |
+|---|---|---|
+| **01 Context** | Skill file, report template, scoring rubric, roadmap, customer feedback and product data. | Trusted instructions take precedence. Retrieved data is evidence, never instructions. |
+| **02 Tools** | Salesforce, Databricks, Jira, Productboard, Confluence, Slack and Zoom transcripts. | Structured tool outputs, authorized ATO access and read-only by default. |
+| **03 Loop** | Retrieve, validate, synthesize, score, draft, verify and hand off for PM review. | Maximum 12 steps, two consecutive tool failures and 120-second execution timeout. |
+| **04 Memory** | Historical customer signals, recurring themes, watch lists, PM decisions and account mappings. | Semantic memory, retention rules and freshness validation. Current authoritative data takes precedence. |
+| **05 Permissions** | Autonomous analysis and story generation; PM-approved draft creation. | Read: automatic. Draft: automatic. Write: approval required. Send: blocked. |
+| **06 Verification** | Validate citations, risk scores, confidence, data freshness, privacy, scope and output completeness. | One corrective attempt. Withhold unsupported recommendations and flag unresolved findings for PM review. |
 
 ## 01 Context · Data Requirements
 
